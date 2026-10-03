@@ -10,7 +10,6 @@ OUTPUTS: ./Log/Query_%Y%m%d%H%M%S.docx
 DEPENDENCIES: numpy, python-docx, sentence-transformers, openai
 """
 
-
 import os
 import glob
 import re
