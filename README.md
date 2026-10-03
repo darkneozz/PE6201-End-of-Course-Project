@@ -20,7 +20,7 @@ Scenario: Kai must process an unfamiliar payment before a strict one-hour cutoff
 | **Output (UX)** | Direct system trigger to open source files for human-in-the-loop verification. |
 
 ### 3. Product architecture
-
+![](High-Level_Product_Architecture.jpg)
 
 ### 4.Evaluation Methodology
 To validate the system, I implemented a rigorous testing pipeline:
