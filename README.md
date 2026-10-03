@@ -58,7 +58,7 @@ Edit in the Environment Variable and set OPENROUTER_API_KEY='your_key_here'
 6. Audit: Every query is automatically saved as a timestamped document in the /Log folder.
 
 ### 5. How to Run - Evals
-1. Run GenerateProcedures.py to generate 30 SOP in /procedures
+1. Run GenerateProcedures.py to generate 30 SOPs in the /procedures folder
 2. Run CreateCaseJSON.py to generate 50 test cases in /results (Output: eval_50_cases.JSON, eval_50_cases.CSV )
 3. Run NonAI_Baseline_BM25.py to get NonAI Baseline results in /results (Output: bm25_baseline_results.JSON, bm25_baseline_results.CSV and category_pass_rates.csv)
 4. Run RunRag.py to get the RAG results with LLM-as-a-Judge (claude-haiku-4.5) in /results (Output: eval_detailed_results.CSV, eval_detailed_results.JSON)
