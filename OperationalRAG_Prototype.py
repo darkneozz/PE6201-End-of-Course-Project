@@ -1,3 +1,16 @@
+"""
+FILE: OperationalRAG_Prototype.py
+PURPOSE: DEMO project:
+        (1) Enter the full path to your procedures folder, 
+        (2) Enter a natural language question 
+        (3) The system will provide an answer and ask if you wish to open the cited .docx files immediately for manual verification.
+        (4) Every query is automatically saved as a timestamped document in the /Log folder.
+INPUTS: ./procedures/{30 x Procedures.docx}, OPENROUTER_API_KEY set in system environment variables
+OUTPUTS: ./Log/Query_%Y%m%d%H%M%S.docx
+DEPENDENCIES: numpy, python-docx, sentence-transformers, openai
+"""
+
+
 import os
 import glob
 import re
