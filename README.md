@@ -43,7 +43,7 @@ To validate the system, I implemented a rigorous testing pipeline:
 ### 2. Dependencies
 Install the required libraries via pip:
 
-pip install numpy sentence-transformers openai python-docx
+pip install numpy sentence-transformers openai python-docx pandas bm25s requests
 
 ### 3. API Configuration
 OperationalRAG uses OpenRouter to access gpt-4o-mini.
