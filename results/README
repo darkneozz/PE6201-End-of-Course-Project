@@ -3,4 +3,4 @@
 # category_pass_rates.csv is generated from NonAI_Baseline_BM25.py and contain a table showing the evaluation result for each category using BM25.
 # eval_50_cases (CSV & JSON) is generated from CreateCaseJSON.py and contain the 50 evaluation cases (Questions, Answer, Procedure Reference, Supporting Sentence, Category).
 # eval_detailed_results (CSV & JSON) is generated from RunRag.py and contain the evaluation results for each case using RAG with LLM-as-a-Judge. 
-# rag_evaluation_table is the table saved from python after running RunRag.py.
+# rag_evaluation_table is the table saved from python after running RunRag.py showing the evaluation result for each category using RAG.
