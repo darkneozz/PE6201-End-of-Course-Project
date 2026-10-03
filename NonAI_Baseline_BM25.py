@@ -1,3 +1,11 @@
+"""
+FILE: NonAI_Baseline_BM25.py
+PURPOSE: To get Non-AI Baseline results in /results
+INPUTS: ./results/eval_50_cases.json
+OUTPUTS: bm25_baseline_results.JSON, bm25_baseline_results.CSV, and category_pass_rates.csv
+DEPENDENCIES: python-docx, bm25s, pandas
+"""
+
 import os
 import json
 from docx import Document
