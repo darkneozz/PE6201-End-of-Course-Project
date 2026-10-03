@@ -1,7 +1,7 @@
 """
 FILE: RunRag.py
 PURPOSE: To generate RAG results with LLM-as-a-Judge (claude-haiku-4.5) in /results
-INPUTS: ./results/eval_50_cases.json, OPENROUTER_API_KEY set in system environment variables
+INPUTS: ./procedures/{30 x Procedures.docx}, ./results/eval_50_cases.json, OPENROUTER_API_KEY set in system environment variables
 OUTPUTS: eval_detailed_results.CSV, eval_detailed_results.JSON
 DEPENDENCIES: numpy, python-docx, sentence-transformers, openai
 """
