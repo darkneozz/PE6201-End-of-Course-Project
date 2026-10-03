@@ -1,3 +1,11 @@
+"""
+FILE: GenerateProcedures.py
+PURPOSE: To generate 30 SOPs (.docx) in the /procedures folder and 1 master procedure (.docx) in the current folder.
+INPUTS: Nil
+OUTPUTS: 30 procedures in the /procedures folder and 1 master procedure (Master_Procedure.docx) in current folder for checking.
+DEPENDENCIES: requests, python-docx
+"""
+
 import requests
 import json
 import re
