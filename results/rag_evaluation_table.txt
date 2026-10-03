@@ -1,0 +1,36 @@
+Python 3.14.7 (tags/v3.14.7:823f032, Aug  5 2026, 10:51:32) [MSC v.1944 64 bit (AMD64)] on win32
+Enter "help" below or click "Help" above for more information.
+>>> 
+= RESTART: C:\Users\Derrick_5090\Downloads\NTU\PE6201-Emerging Artificial Intelligence (AI) Technologies\Assignment\End of Course Project\For Submission\RunRag.py
+Loaded 30 documents -> 95 chunks
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 199/199 [00:00<00:00, 1734.09it/s]
+Evaluated 5/50 cases... (15 total runs)
+Evaluated 10/50 cases... (30 total runs)
+Evaluated 15/50 cases... (45 total runs)
+Evaluated 20/50 cases... (60 total runs)
+Evaluated 25/50 cases... (75 total runs)
+Evaluated 30/50 cases... (90 total runs)
+Evaluated 35/50 cases... (105 total runs)
+Evaluated 40/50 cases... (120 total runs)
+Evaluated 45/50 cases... (135 total runs)
+Evaluated 50/50 cases... (150 total runs)
+
+=================================================================
+EVALUATION COMPLETE - 150 total iterations processed
+Files saved to /results folder: eval_detailed_results.csv, .json
+Category             | Pass Rate      
+-----------------------------------------------------------------
+Standard             | 66.67%
+Vocab Mismatch       | 60.00%
+Multi-Hop            | 20.00%
+Distractors          | 80.00%
+Absent               | 100.00%
+Out-of-Corpus        | 100.00%
+Discontinued         | 100.00%
+Counterfactual       | 25.00%
+Ambiguous            | 0.00%
+Adversarial          | 100.00%
+-----------------------------------------------------------------
