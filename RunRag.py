@@ -1,3 +1,11 @@
+"""
+FILE: RunRag.py
+PURPOSE: To generate RAG results with LLM-as-a-Judge (claude-haiku-4.5) in /results
+INPUTS: ./results/eval_50_cases.json, OPENROUTER_API_KEY set in system environment variables
+OUTPUTS: eval_detailed_results.CSV, eval_detailed_results.JSON
+DEPENDENCIES: numpy, python-docx, sentence-transformers, openai
+"""
+
 import os
 import glob
 import json
@@ -51,7 +59,7 @@ EMBEDDER_MODEL = 'all-mpnet-base-v2'
 embedder = SentenceTransformer(EMBEDDER_MODEL)
 VECTOR_MATRIX = embedder.encode(CHUNKS_TEXT, normalize_embeddings=True)
 
-def retrieve(question, k=15): # K=15 for better Multi-Hop retrieval
+def retrieve(question, k=15): 
     """Cosine similarity retrieval returning text and source."""
     q_vec = embedder.encode([question], normalize_embeddings=True)[0]
     scores = VECTOR_MATRIX @ q_vec
