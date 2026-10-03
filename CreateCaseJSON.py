@@ -1,3 +1,11 @@
+"""
+FILE: CreateCaseJSON.py
+PURPOSE: To generate 50 test cases in /results
+INPUTS: Nil
+OUTPUTS: eval_50_cases.JSON, eval_50_cases.CSV
+DEPENDENCIES: pandas
+"""
+
 import pandas as pd
 import json
 import os
