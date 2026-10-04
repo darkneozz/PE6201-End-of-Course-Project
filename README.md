@@ -31,7 +31,6 @@ Scenario: Kai must process an unfamiliar payment before a strict one-hour cutoff
 
 | Categories | BM25 (50 Trials) | RAG (150 Trials) |
 | :--- | :--- | :--- |
-| :--- | :--- | :--- |
 | Standard/Baseline | 78% | 67% |
 | Vocabulary Mismatch | 20% | 60% |
 | Multi-Hop | 0% | 20% |
