@@ -64,7 +64,7 @@ class OperationalRAG:
                 i += max(1, size - overlap)
         return all_chunks
 
-    def retrieve(self, question, k=5):
+    def retrieve(self, question, k=15):
         q_vec = self.embedder.encode([question], normalize_embeddings=True)[0]
         scores = self.vector_matrix @ q_vec
         top_k_idx = np.argsort(-scores)[:k]
