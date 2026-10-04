@@ -9,7 +9,7 @@ OperationalRAG is a localized Retrieval-Augmented Generation (RAG) system design
 ### 1. Persona
 User: Kai, a Junior Operational Banking Officer.
 
-Scenario: Kai must process an unfamiliar payment before a strict one-hour cutoff. Unable to reach his manager, he must locate specific steps across 30+ dense procedures. OperationalRAG reduces this retrieval time from ~30 minutes of manual scanning to seconds of auditable retrieval.
+Scenario: Kai must process an unfamiliar payment before a strict one-hour cutoff. Unable to reach his manager, he must locate specific steps across 30 dense procedures. OperationalRAG reduces this retrieval time from ~30 minutes of manual scanning to seconds of auditable retrieval.
 
 ### 2. Inputs and outputs
 | Component | Description |
