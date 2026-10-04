@@ -58,9 +58,6 @@ corpus_tokens = bm25s.tokenize(corpus_texts, lower=True)
 retriever = bm25s.BM25()
 retriever.index(corpus_tokens)
 
-PROCEDURE_TO_FILENAME = {
-}
-
 # 4. Run Evaluation
 results = []
 correct_count = 0
@@ -78,7 +75,8 @@ for i, case in enumerate(eval_cases):
     top_doc = retrieved_docs[0][0]
     top_score = float(scores[0][0])
 
-    expected_filename = PROCEDURE_TO_FILENAME.get(expected_ref, expected_ref)
+    # Use expected_ref directly since filenames match the references (e.g., PAY-OPS-001)
+    expected_filename = expected_ref
 
     is_correct = False
     
@@ -95,6 +93,7 @@ for i, case in enumerate(eval_cases):
             is_correct = False
         else:
             display_doc = top_doc
+            # Check if the retrieved filename matches the expected reference
             is_correct = (top_doc == expected_filename) or (expected_filename in top_doc)
 
     if is_correct:
@@ -146,3 +145,4 @@ print("="*90)
 df.drop(columns=['Is_Correct_Binary']).to_csv(f"{output_folder}/bm25_baseline_results.csv", index=False)
 df.drop(columns=['Is_Correct_Binary']).to_json(f"{output_folder}/bm25_baseline_results.json", orient="records", indent=2)
 print("Results saved to 'bm25_baseline_results.csv' and 'category_pass_rates.csv'")
+
