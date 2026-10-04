@@ -23,18 +23,34 @@ Scenario: Kai must process an unfamiliar payment before a strict one-hour cutoff
 ### 3. Product architecture
 ![](High-Level_Product_Architecture.jpg)
 
-### 4. Evaluation Methodology
-To validate the system, I implemented a rigorous testing pipeline:
-*   **Synthetic Data Generation:** Used GenerateProcedures.py to create a domain-specific banking corpus of 30 SOPs.
-*   **Ground Truth Definition:** Created a curated set of 50 test cases across 10 complexity categories (e.g., Multi-Hop, Adversarial) using CreateCaseJSON.py.
-*   **Lexical Baseline:** Ran NonAI_Baseline_BM25.py to establish a performance floor using BM25 keyword search.
-*   **RAG Validation:** Executed 150 trials via RunRag.py, utilizing an LLM-as-a-Judge (claude-haiku-4.5) to ensure factual equivalence between generated answers and the ground truth.
-
-### 5. Metrics Performance
+### 4. Metrics Performance
 *   **Target Metric:** Improve upon Lexical Search (BM25) Top-1 Accuracy and reduce "Hallucinations" in a banking context.
 *   **Baseline (BM25):** 40% Accuracy.
 *   **Reached (OperationalRAG):** 66% Accuracy.
 *   **Key Win:** Vocabulary Mismatch performance rose from 20% (BM25) to 60% (RAG).
+
+
+### 5. Evaluation Methodology
+To validate the system, I implemented a rigorous testing pipeline:
+*   **Synthetic Data Generation:** Used GenerateProcedures.py (deepseek-v4.1-flash) to create a domain-specific banking corpus of 30 SOPs.
+*   **Ground Truth Definition:** Created a curated set of 50 test cases across 10  categories (as shown below) using CreateCaseJSON.py.
+*   **Lexical Baseline:** Ran NonAI_Baseline_BM25.py to establish a performance floor using BM25 keyword search.
+*   **RAG Validation:** Executed 150 trials via RunRag.py, utilizing an LLM-as-a-Judge (claude-haiku-4.5) to ensure factual equivalence between generated answers and the ground truth.
+
+| Categories | Description | Number of Cases |
+| :--- | :--- | :--- |
+| Standard/Baseline | Tests direct retrieval accuracy and basic comprehension. | 9 |
+| Vocabulary Mismatch | Tests if embeddings capture semantic meaning over exact keywords. | 5 |
+| Multi-Hop | Tests cross-referencing and synthesis across procedures. | 5 |
+| Distractors | Evaluates if the system correctly isolates procedure-specific metrics when similar values appear elsewhere. | 5 |
+| Absent but Plausible | Tests domain boundaries. Model must say "Not in documents" or cite exclusion. | 5 |
+| Out-of-Corpus | Tests operational guardrails and scope refusal. | 5 |
+| Discontinued | Prevents guessing missing details. | 4 |
+| Counterfactual | Tests factual grounding and premise correction. | 4 |
+| Ambiguous | Tests if system asks clarifying questions instead of guessing. | 4 |
+| Adversarial | Tests prompt leakage, roleplay, and bypass attempts. | 4 |
+
+Ceiling & Limitations: Synthetic data lacks real-world noise (typos, conflicting versions, fragmented context). It validates retrieval logic and grounding constraints but serves as a proxy for production performance. Manual validation of 20 cases confirmed the LLM-judge’s precision (1.00) but revealed conservative recall (0.71), meaning reported scores are a floor, not a ceiling.
 
 ## B. Technical Instruction
 ### 1. Environment
@@ -63,3 +79,5 @@ Edit in the Environment Variable and set OPENROUTER_API_KEY='your_key_here'
 2. Run CreateCaseJSON.py to generate 50 test cases in /results (Output: eval_50_cases.JSON, eval_50_cases.CSV )
 3. Run NonAI_Baseline_BM25.py to get NonAI Baseline results in /results (Output: bm25_baseline_results.JSON, bm25_baseline_results.CSV and category_pass_rates.csv)
 4. Run RunRag.py to get the RAG results with LLM-as-a-Judge (claude-haiku-4.5) in /results (Output: eval_detailed_results.CSV, eval_detailed_results.JSON)
+
+**Note:** The 50 test cases are specifically curated for this project’s 30 synthetic procedures and may not be directly applicable to a new set of procedures, as `GenerateProcedures.py` relies on `deepseek-v4.1-flash` to generate domain-specific content.
