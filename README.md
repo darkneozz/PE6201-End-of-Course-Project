@@ -1,4 +1,5 @@
 # OperationalRAG
+PE6201 End-of-Course Project
 
 ## Overview
 OperationalRAG is a localized Retrieval-Augmented Generation (RAG) system designed for banking operational procedures. It allows users to index a local folder of `.docx` files and query them using natural language, ensuring all answers are grounded in the provided documents with a full audit trail.
@@ -22,7 +23,7 @@ Scenario: Kai must process an unfamiliar payment before a strict one-hour cutoff
 ### 3. Product architecture
 ![](High-Level_Product_Architecture.jpg)
 
-### 4.Evaluation Methodology
+### 4. Evaluation Methodology
 To validate the system, I implemented a rigorous testing pipeline:
 *   **Synthetic Data Generation:** Used GenerateProcedures.py to create a domain-specific banking corpus of 30 SOPs.
 *   **Ground Truth Definition:** Created a curated set of 50 test cases across 10 complexity categories (e.g., Multi-Hop, Adversarial) using CreateCaseJSON.py.
