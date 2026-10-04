@@ -27,8 +27,22 @@ Scenario: Kai must process an unfamiliar payment before a strict one-hour cutoff
 *   **Target Metric:** Improve upon Lexical Search (BM25) Top-1 Accuracy and reduce "Hallucinations" in a banking context.
 *   **Baseline (BM25):** 40% Accuracy.
 *   **Reached (OperationalRAG):** 66% Accuracy.
-*   **Key Win:** Vocabulary Mismatch performance rose from 20% (BM25) to 60% (RAG).
+*   **Key Win:** Vocabulary Mismatch performance rose from 20% (BM25) to 60% (RAG) and Distractors from 40% (BM25) to 80% (RAG)
 
+| Categories | BM25 (50 Trials) | RAG (150 Trials) |
+| :--- | :--- | :--- |
+| :--- | :--- | :--- |
+| Standard/Baseline | 78% | 67% |
+| Vocabulary Mismatch | 20% | 60% |
+| Multi-Hop | 0% | 20% |
+| Distractors | 40% | 80% |
+| Absent but Plausible | 20% | 100% |
+| Out-of-Corpus | 60% | 100% |
+| Discontinued | 25% | 100% |
+| Counterfactual | 25% | 25% |
+| Ambiguous | 75% | 0% |
+| Adversarial | 25% | 100% |
+| Total | 40% | 66% |
 
 ### 5. Evaluation Methodology
 To validate the system, I implemented a rigorous testing pipeline:
